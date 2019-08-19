@@ -6,6 +6,8 @@ Imports plot_test_fft. Make sure to copy any hardcoded changes in plot_test into
 plot_test_fft so that we are using the same contours.
 Also can get it to print and analyze the time series intervals, which is currently
 not constant.
+Due to the script creating an array by stacking rows one-by-one, this can only be run
+serially.
 
 Usage:
     plot_2d_series.py <files>... [--output=<dir>]
