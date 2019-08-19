@@ -75,7 +75,6 @@ for fld in PolRel:
     logger.info('amplitude of {0} = {1:.2e} {2}'.format(
         fld, PolRel[fld], units))
 logger.info('frequency is {0:.2e} 1/s'.format(omega))
-exit()
 '-----------Create basis and domain---------'
 x_basis = de.Fourier('x', mx, interval=(0., L), dealias=3/2)
 z_basis = de.Chebyshev('z', mz, interval=(-H, 0.), dealias=3/2)
