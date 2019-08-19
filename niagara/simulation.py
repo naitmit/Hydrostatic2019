@@ -1,6 +1,6 @@
 """
-Simulation script for Niagara. Everything is the same as simulation.py except
-the dedalus modes are changed for 40 cores, and some parameters are changed.
+Simulation script for Niagara. Everything is the same as simulation.py for NICOGWS2015
+except the dedalus modes are changed for 40 cores, and some parameters are changed.
 I believe the ony the amplitude and snapshot intervals are changed here.
 
 Added more variables so that both hydro static and non-hydrostatic
