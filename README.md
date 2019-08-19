@@ -1,8 +1,8 @@
-#How to use
+# How to use
 
 There are 3 main parts to this repository: the Niagara directory, fft_test directory, and the scripts outside of these directories. First be familiar with these outside scripts, then look into those directories.
 
-##Scripts outside of directories
+## Scripts outside of directories
 
 These are the main scripts.
 1. simulation.py is the Python script for the actual simulation. It outputs the data in the form of HDF5 files in 'snapshots' folder.
