@@ -5,7 +5,7 @@ Descriptions of the scripts are below. An example of a typical routine in using 
 ## Scripts outside of directories
 
 These are the main scripts, usually all run on NICOGWS2015.
-1. `simulation.py` is the Python script for the actual simulation. It outputs the data in the form of HDF5 files in 'snapshots' folder.
+1. `simulation.py` is the Python script for the actual simulation. It outputs the data in the form of HDF5 files in 'snapshots' folder
 2. `merge.py` merges HDF5 files into one global dataset. This is provided by the Dedalus library
 3. `plot_2d_series.py` is the routine for plotting the HDF5 files based off
 https://bitbucket.org/dedalus-project/dedalus/src/tip/examples/ivp/3d_rayleigh_benard/plot_slices.py?at=default
@@ -17,7 +17,7 @@ https://bitbucket.org/dedalus-project/dedalus/src/tip/dedalus/extras/plot_tools.
 
 ## fft_test directory
 This is used for producing the power spectrum for (total) buoyancy contours in the pycnocline. Some example pictures are provided.
-1. `transform.py` takes ../snapshots/\*.hf file in the outside directory and creates power spectrum by calling on `plot_test_fft.py`
+1. `transform.py` takes ../snapshots/\*.hf file in the outside directory and creates power spectrum by calling on `plot_test_fft.py`. This can only be run serially
 2. `plot_test_fft.py` extracts the buoyancy contours of interest in each snapshot. It is essentially plot_test.py without plot formatting
 3. `runtransfrom.sh` runs `transform.py`
 
@@ -25,7 +25,7 @@ This is used for producing the power spectrum for (total) buoyancy contours in t
 For running on Niagara. No plotting is done on Niagara, we only get the HDF5 files from it and then plot locally.
 1. `simulation.py` is the exact same as above, with changes to accompany the use of 40 cores
 2. `run.sh` is the same as above but running only the simulations
-3. `run.slrm` is submitted to run on Niagara. It runs `run.sh`. See https://github.com/ngrisouard/dedalus-on-niagara for details on this.
+3. `run.slrm` is submitted to run on Niagara. It runs `run.sh`. See https://github.com/ngrisouard/dedalus-on-niagara for details on this
 
 # In practice
 In order to change anything in the simulation (e.g. pycnocline height), I must edit `simple.py`. To specify the variables I want to plot and general plot formatting such as titles, I edit `plot_2d_series.py`.
@@ -39,4 +39,4 @@ The task of finding buoyancy contours is important to note. In editing `plot_tes
 After setting the desired buoyancy contours, I use the fft_test directory for a power spectrum. I must hard code the same stratification and buoyancy interval settings in the contour part of the `plot_test.py` script into that of `plot_test_fft.py`. Then I pick the one specific contour I want by specifying its index, and run `runtransform.py`.
 
 ## Possible improvements for the future
-Finding the buoyancy contours can be an inconvenient task - one can look for a more systematic routine for this. Furthermore, it may be more convenient to create a global N^2 function in an individual script such that when N^2 is changed, it only need be changed in one script. 
+Finding the buoyancy contours can be an inconvenient task - one can look for a more systematic routine for this. Furthermore, it may be more convenient to create a global N^2 function in an individual script such that when N^2 is changed, it only need be changed in one script.
