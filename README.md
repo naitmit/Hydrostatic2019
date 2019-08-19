@@ -17,7 +17,7 @@ https://bitbucket.org/dedalus-project/dedalus/src/tip/dedalus/extras/plot_tools.
 
 ## fft_test directory
 This is used for producing the power spectrum for (total) buoyancy contours in the pycnocline. Some example pictures are provided.
-1. `transform.py` takes ../snapshots/\*.hf file in the outside directory and creates power spectrum by calling on `plot_test_fft.py`. This can only be run serially
+1. `transform.py` takes ../snapshots/\*.h5 file in the outside directory and creates power spectrum by calling on `plot_test_fft.py`. This can only be run serially
 2. `plot_test_fft.py` extracts the buoyancy contours of interest in each snapshot. It is essentially plot_test.py without plot formatting
 3. `runtransfrom.sh` runs `transform.py`
 
