@@ -81,7 +81,7 @@ def main(filename, start, count, output):
                             z = v[:,1]
                             Z = np.vstack((Z,z)) #build array of z values
                         if index%5 == 0: #just to know where it is at
-                            print('n=', n ,'index=', index)
+                            print('n=', n ,'index=', index) #nth variable, ith timestep
                         time= np.append(time,file['scales/sim_time'][index])
                         if len(time) >= 2:
                             difference = time[index-1] - time[index-2] #time series interval
