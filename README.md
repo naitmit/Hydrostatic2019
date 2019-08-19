@@ -32,8 +32,11 @@ In order to change anything in the simulation (e.g. pycnocline height), I must e
 
 If I want to plot buoyancy contours, I must edit `plot_test.py`. There is also the option to set the ylim as well as more detailed plot formatting by editing this file. Note that I must hard-code the N^2 stratifaction function in this file in order to integrate and find buoyancy contours at specified levels. Thus any changes in stratification in `simulation.py` must be added to `plot_test.py`.
 
-I submit `run.sh` on the workstation and get the figures. On Niagara, I run `run.slrm` and transfer the HDF5 files to the workstation, where I run `runfig.sh` to get figures. If I want different figures for the same simulation, I edit the plotting files and run `runfig.sh` again.
+I submit `run.sh` on the workstation and get the figures. On Niagara, I run `run.slrm` and transfer the HDF5 files to the workstation, where I run `runfig.sh` to get figures. If I want different figures for the same simulation, I edit the plotting files and run `runfig.sh`.
 
 The task of finding buoyancy contours is important to note. In editing `plot_test.py`, I need to specify the buoyancy value range and number of contours at the desired height, which requires calculating. Furthermore, the default setting is that the contour values are equally spaced in the specified range. Since N^2 is not linear, this physical spacing in plot is not linear. In addition, the nonlinearity of N^s also makes specifying the ylim for the plot difficult. I have not come up with a systematic way of doing this yet - it has been more of trial and error in setting the buoyancy range and ylim.
 
-After setting finding the desired buoyancy contours, I use the fft_test directory for a power spectrum. I must hard code the same stratification and buoyancy interval settings in the contour part of the `plot_test.py` script into that of `plot_test_fft.py`. Then I pick the one specific contour I want by specifying its index, and run `runtransform.py`.
+After setting the desired buoyancy contours, I use the fft_test directory for a power spectrum. I must hard code the same stratification and buoyancy interval settings in the contour part of the `plot_test.py` script into that of `plot_test_fft.py`. Then I pick the one specific contour I want by specifying its index, and run `runtransform.py`.
+
+## Possible improvements for the future
+Finding the buoyancy contours can be an inconvenient task - one can look for a more systematic routine for this. Furthermore, it may be more convenient to create a global N^2 function in an individual script such that when N^2 is changed, it only need be changed in one script. 
