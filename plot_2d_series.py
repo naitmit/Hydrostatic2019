@@ -27,7 +27,7 @@ def main(filename, start, count, output):
     """Save plot of specified tasks for given range of analysis writes."""
 
     # Plot settings
-    tasks = ['btot', 'btot_stat'] #for (change in) bouyancy in non-hydrostat and hydrostat cases
+    tasks = ['u, 'v', 'b'] #for (change in) bouyancy in non-hydrostat and hydrostat cases
     scale = 2.5
     dpi = 100
     title_func = lambda sim_time: 't = {:.3f}'.format(sim_time)
