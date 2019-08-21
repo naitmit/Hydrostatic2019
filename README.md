@@ -1,4 +1,4 @@
-# How to use
+# Usage
 
 There are 3 main parts to this repository: the Niagara directory, fft_test directory, and the scripts outside of these directories. First be familiar with these outside scripts, then look into those directories.
 Descriptions of the scripts are below. An example of a typical routine in using these scripts follows.
