@@ -26,6 +26,7 @@ For running on Niagara. No plotting is done on Niagara, we only get the HDF5 fil
 1. `simulation.py` is the exact same as above, with changes to accompany the use of 40 cores
 2. `run.sh` is the same as above but running only the simulations
 3. `run.slrm` is submitted to run on Niagara. It runs `run.sh`. See https://github.com/ngrisouard/dedalus-on-niagara for details on this
+4. There is an additional `*.out` file to show the Niagara output of a typical run
 
 # In practice
 In order to change anything in the simulation (e.g. pycnocline height), I must edit `simple.py`. To specify the variables I want to plot and general plot formatting such as titles, I edit `plot_2d_series.py`.
