@@ -29,7 +29,7 @@ For running on Niagara. No plotting is done on Niagara, we only get the HDF5 fil
 4. There is an additional `*.out` file to show the Niagara output of a typical run
 
 # In practice
-In order to change anything in the simulation (e.g. pycnocline height), I must edit `simple.py`. To specify the variables I want to plot and general plot formatting such as titles, I edit `plot_2d_series.py`.
+In order to change anything in the simulation (e.g. pycnocline height), I must edit `simulation.py`. To specify the variables I want to plot and general plot formatting such as titles, I edit `plot_2d_series.py`.
 
 If I want to plot buoyancy contours, I must edit `plot_test.py`. There is also the option to set the ylim as well as more detailed plot formatting by editing this file. Note that I must hard-code the N^2 stratifaction function in this file in order to integrate and find buoyancy contours at specified levels. Thus any changes in stratification in `simulation.py` must be added to `plot_test.py`.
 
